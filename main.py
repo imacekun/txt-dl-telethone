@@ -39,6 +39,7 @@ async def _(event):
 async def _(event):
     with open("thumb.png", "w") as f:
         f.write("")
+    os.remove("thumb.png")
     await event.reply("cleared thumbnail")
 
 
