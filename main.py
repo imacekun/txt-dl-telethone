@@ -103,7 +103,7 @@ async def _(event):
             r = await event.reply(f"`Downloading...\n{name[:60]}\n\nfile number: {i+1}`")
             caption =  f"`{name[:60]}\n\nfile number: {i+1}`"
             k = await helper.download_video(url, filename)
-            print(k)
+            filename = k
             res_file = await fast_upload(bot, filename, r)
             if not os.path.isfile("thumb.png"):
                 subprocess.call(f'ffmpeg -i "{filename}" -ss 00:00:01 -vframes 1 "{filename}.jpg"', shell=True)
